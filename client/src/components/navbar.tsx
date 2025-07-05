@@ -126,7 +126,7 @@ export default function Navbar() {
                   <div className="flex items-center space-x-4 text-gray-600">
                     <div className="flex items-center space-x-1">
                       <Phone size={14} className="text-primary" />
-                      <span>+244 923 456 789</span>
+                      <span>+244 949 639 932</span>
                     </div>
                     <div className="hidden sm:flex items-center space-x-1">
                       <MapPin size={14} className="text-primary" />

@@ -52,7 +52,7 @@ export default function Footer() {
                 <Instagram className="text-primary" size={20} />
               </a>
               <a 
-                href="https://wa.me/244923456789" 
+                href="https://wa.me/244949639932" 
                 className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary/40 transition-colors duration-300"
               >
                 <MessageCircle className="text-primary" size={20} />
@@ -96,7 +96,7 @@ export default function Footer() {
             <h4 className="text-lg font-poppins font-semibold mb-4">Contato</h4>
             <div className="space-y-2 text-gray-300">
               <p><MapPin className="inline mr-2 text-primary" size={16} />Rua Rainha Ginga, 123</p>
-              <p><Phone className="inline mr-2 text-primary" size={16} />+244 923 456 789</p>
+              <p><Phone className="inline mr-2 text-primary" size={16} />+244 949 639 932</p>
               <p><Mail className="inline mr-2 text-primary" size={16} />contato@kenypet.co.ao</p>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function Footer() {
       {/* Floating WhatsApp Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <a 
-          href="https://wa.me/244923456789" 
+          href="https://wa.me/244949639932" 
           className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 animate-pulse-slow"
         >
           <MessageCircle className="text-white" size={24} />

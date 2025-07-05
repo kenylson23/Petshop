@@ -77,7 +77,7 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: "Telefone",
-      content: "+244 923 456 789",
+      content: "+244 949 639 932",
       color: "bg-accent/20 text-accent"
     },
     {

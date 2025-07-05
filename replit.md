@@ -128,6 +128,12 @@ Changelog:
   * Improved button visibility and contrast
   * Fixed CSS import order issues
   * WhatsApp links updated for Angola numbers
+- July 05, 2025. Implemented blue and white color scheme:
+  * Changed primary color from red to vibrant blue (hsl(210, 100%, 50%))
+  * Added custom blue gradients and glass effects
+  * Updated all buttons, cards, and sections with blue theme
+  * Added blue pulse animations and floating effects
+  * Updated phone number to +244 949 639 932 throughout site
 ```
 
 ## User Preferences
