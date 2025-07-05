@@ -140,6 +140,11 @@ Changelog:
   * Configured Netlify for static site hosting
   * Updated contact form to work without backend
   * Optimized build process for static deployment
+- July 05, 2025. Fixed deployment configuration:
+  * Resolved port conflicts in development
+  * Updated netlify.toml to use correct publish directory (dist/public)
+  * Optimized build process for faster compilation
+  * Fixed static site configuration for Netlify deployment
 ```
 
 ## User Preferences

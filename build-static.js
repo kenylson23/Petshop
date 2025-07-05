@@ -12,15 +12,16 @@ if (existsSync('dist')) {
 }
 
 try {
-  // Build with Vite
+  // Build with Vite with optimizations for faster build
   console.log('📦 Building frontend with Vite...');
-  execSync('npx vite build --mode production', { 
+  execSync('npx vite build --mode production --minify false --sourcemap false', { 
     stdio: 'inherit',
-    env: { ...process.env, NODE_ENV: 'production' }
+    env: { ...process.env, NODE_ENV: 'production' },
+    timeout: 300000 // 5 minutes timeout
   });
   
   console.log('✅ Build completed successfully!');
-  console.log('📁 Static files ready in dist/ directory');
+  console.log('📁 Static files ready in dist/public directory');
   console.log('🌐 Ready for Netlify deployment');
   
 } catch (error) {
