@@ -55,15 +55,14 @@ export default function HeroSection() {
             >
               <Button 
                 onClick={() => scrollToSection("services")}
-                className="bg-primary hover:bg-primary/80 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl border-2 border-transparent"
               >
                 <Calendar className="mr-2" size={20} />
                 Agendar Serviço
               </Button>
               <Button 
                 onClick={() => scrollToSection("products")}
-                variant="outline"
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+                className="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <Store className="mr-2" size={20} />
                 Ver Produtos

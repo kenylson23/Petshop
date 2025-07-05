@@ -148,7 +148,12 @@ export default function ProductsSection() {
                     </p>
                     <div className="flex justify-between items-center">
                       <span className="text-2xl font-bold text-primary">
-                        R$ {product.price}
+                        {Number(product.price).toLocaleString('pt-AO', {
+                          style: 'currency',
+                          currency: 'AOA',
+                          minimumFractionDigits: 0,
+                          maximumFractionDigits: 0
+                        })}
                       </span>
                       <Button
                         onClick={() => addToCart(product.id, product.name)}

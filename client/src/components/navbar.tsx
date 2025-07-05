@@ -28,31 +28,31 @@ export default function Navbar() {
     <div className={`flex ${mobile ? "flex-col space-y-4" : "space-x-8"}`}>
       <button
         onClick={() => { scrollToSection("home"); onClose(); }}
-        className="text-dark hover:text-primary transition-colors duration-300 font-medium"
+        className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium hover:bg-gray-100 px-3 py-2 rounded-md"
       >
         Início
       </button>
       <button
         onClick={() => { scrollToSection("services"); onClose(); }}
-        className="text-dark hover:text-primary transition-colors duration-300 font-medium"
+        className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium hover:bg-gray-100 px-3 py-2 rounded-md"
       >
         Serviços
       </button>
       <button
         onClick={() => { scrollToSection("products"); onClose(); }}
-        className="text-dark hover:text-primary transition-colors duration-300 font-medium"
+        className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium hover:bg-gray-100 px-3 py-2 rounded-md"
       >
         Produtos
       </button>
       <button
         onClick={() => { scrollToSection("about"); onClose(); }}
-        className="text-dark hover:text-primary transition-colors duration-300 font-medium"
+        className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium hover:bg-gray-100 px-3 py-2 rounded-md"
       >
         Sobre
       </button>
       <button
         onClick={() => { scrollToSection("contact"); onClose(); }}
-        className="text-dark hover:text-primary transition-colors duration-300 font-medium"
+        className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium hover:bg-gray-100 px-3 py-2 rounded-md"
       >
         Contato
       </button>

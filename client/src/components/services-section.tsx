@@ -115,7 +115,12 @@ export default function ServicesSection() {
                     </p>
                     <div className="text-center">
                       <span className="text-3xl font-bold text-primary">
-                        R$ {service.price}
+                        {Number(service.price).toLocaleString('pt-AO', {
+                          style: 'currency',
+                          currency: 'AOA',
+                          minimumFractionDigits: 0,
+                          maximumFractionDigits: 0
+                        })}
                       </span>
                       <span className="text-gray-500">/serviço</span>
                     </div>

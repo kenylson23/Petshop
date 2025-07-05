@@ -1,8 +1,8 @@
-# Keny Pet - Pet Services and Products Website
+# Keny Pet Angola - Pet Services and Products Website
 
 ## Overview
 
-Keny Pet is a modern full-stack web application for a pet services and products business. It's built as a single-page application (SPA) with a React frontend and Node.js/Express backend, featuring a PostgreSQL database for data persistence. The application showcases pet services, products, and provides a contact form for customer inquiries.
+Keny Pet Angola is a modern full-stack web application for a pet services and products business based in Luanda, Angola. It's built as a single-page application (SPA) with a React frontend and Node.js/Express backend, featuring a PostgreSQL database for data persistence. The application showcases pet services, products with pricing in Angolan Kwanza (AOA), and provides a contact form for customer inquiries. The site features dynamic 3D animations using CSS and Framer Motion to represent animal life and energy.
 
 ## System Architecture
 
@@ -121,10 +121,20 @@ Keny Pet is a modern full-stack web application for a pet services and products 
 ```
 Changelog:
 - July 05, 2025. Initial setup
+- July 05, 2025. Adapted for Angolan context with:
+  * Currency formatting changed to Angolan Kwanza (AOA)
+  * Contact information updated to Luanda, Angola
+  * Phone numbers changed to Angola format (+244)
+  * Improved button visibility and contrast
+  * Fixed CSS import order issues
+  * WhatsApp links updated for Angola numbers
 ```
 
 ## User Preferences
 
 ```
 Preferred communication style: Simple, everyday language.
+Target market: Angola
+Currency: Angolan Kwanza (AOA)
+Location: Luanda, Angola
 ```

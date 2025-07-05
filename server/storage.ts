@@ -43,28 +43,28 @@ export class MemStorage implements IStorage {
       {
         name: "Banho & Tosa",
         description: "Serviços completos de higiene e estética para deixar seu pet lindo e cheiroso",
-        price: "45.00",
+        price: "4500.00",
         icon: "fas fa-cut",
         category: "grooming"
       },
       {
         name: "Consulta Veterinária",
         description: "Atendimento veterinário completo com profissionais especializados",
-        price: "80.00",
+        price: "8000.00",
         icon: "fas fa-stethoscope",
         category: "health"
       },
       {
         name: "Vacinação",
         description: "Programa completo de vacinação para proteger a saúde do seu pet",
-        price: "60.00",
+        price: "6000.00",
         icon: "fas fa-syringe",
         category: "health"
       },
       {
         name: "Pet Sitting",
         description: "Cuidados especializados para seu pet enquanto você viaja",
-        price: "35.00",
+        price: "3500.00",
         icon: "fas fa-home",
         category: "care"
       }
@@ -75,7 +75,7 @@ export class MemStorage implements IStorage {
       {
         name: "Ração Premium",
         description: "Ração super premium para cães adultos",
-        price: "89.90",
+        price: "8990.00",
         category: "food",
         image: "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
         inStock: true
@@ -83,7 +83,7 @@ export class MemStorage implements IStorage {
       {
         name: "Brinquedos Interativos",
         description: "Kit com brinquedos para diversão",
-        price: "35.90",
+        price: "3590.00",
         category: "toys",
         image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
         inStock: true
@@ -91,7 +91,7 @@ export class MemStorage implements IStorage {
       {
         name: "Coleira e Guia",
         description: "Conjunto premium para passeios",
-        price: "45.90",
+        price: "4590.00",
         category: "accessories",
         image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
         inStock: true
@@ -99,7 +99,7 @@ export class MemStorage implements IStorage {
       {
         name: "Vitaminas e Suplementos",
         description: "Para a saúde e vitalidade do seu pet",
-        price: "67.90",
+        price: "6790.00",
         category: "health",
         image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
         inStock: true

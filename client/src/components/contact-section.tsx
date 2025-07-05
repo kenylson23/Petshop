@@ -71,19 +71,19 @@ export default function ContactSection() {
     {
       icon: MapPin,
       title: "Localização",
-      content: "Rua das Flores, 123 - Centro, Sua Cidade",
+      content: "Rua Rainha Ginga, 123 - Maianga, Luanda",
       color: "bg-primary/20 text-primary"
     },
     {
       icon: Phone,
       title: "Telefone",
-      content: "(11) 99999-9999",
+      content: "+244 923 456 789",
       color: "bg-accent/20 text-accent"
     },
     {
       icon: Mail,
       title: "Email",
-      content: "contato@kenypet.com",
+      content: "contato@kenypet.co.ao",
       color: "bg-success/20 text-success"
     },
     {
