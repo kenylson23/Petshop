@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
-import { apiRequest } from "@/lib/queryClient";
 import { insertContactSchema, type InsertContact } from "@shared/schema";
 
 export default function ContactSection() {
@@ -18,38 +16,26 @@ export default function ContactSection() {
     message: ""
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const queryClient = useQueryClient();
-
-  const mutation = useMutation({
-    mutationFn: async (data: InsertContact) => {
-      const response = await apiRequest("POST", "/api/contacts", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Mensagem enviada!",
-        description: "Entraremos em contato em breve.",
-      });
-      setFormData({ name: "", email: "", phone: "", message: "" });
-      setErrors({});
-      queryClient.invalidateQueries({ queryKey: ['/api/contacts'] });
-    },
-    onError: (error) => {
-      toast({
-        title: "Erro ao enviar mensagem",
-        description: "Tente novamente mais tarde.",
-        variant: "destructive",
-      });
-    }
-  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
     try {
       const validatedData = insertContactSchema.parse(formData);
-      mutation.mutate(validatedData);
+      setIsSubmitting(true);
+      
+      // Simulate form submission for static site
+      setTimeout(() => {
+        setIsSubmitting(false);
+        toast({
+          title: "Mensagem enviada!",
+          description: "Entraremos em contato em breve.",
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setErrors({});
+      }, 1000);
     } catch (error: any) {
       const fieldErrors: Record<string, string> = {};
       error.errors?.forEach((err: any) => {
@@ -219,11 +205,11 @@ export default function ContactSection() {
                   
                   <Button 
                     type="submit"
-                    disabled={mutation.isPending}
+                    disabled={isSubmitting}
                     className="w-full bg-white text-primary hover:bg-gray-100 py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
                   >
                     <Send className="mr-2" size={20} />
-                    {mutation.isPending ? "Enviando..." : "Enviar Mensagem"}
+                    {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
                   </Button>
                 </form>
               </CardContent>

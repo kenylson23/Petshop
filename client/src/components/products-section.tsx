@@ -1,33 +1,23 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
 import { ShoppingCart, Check } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { staticProducts, productCategories } from "@/data/static-data";
 import type { Product } from "@shared/schema";
-
-const categories = [
-  { id: "all", name: "Todos" },
-  { id: "food", name: "Alimentação" },
-  { id: "toys", name: "Brinquedos" },
-  { id: "accessories", name: "Acessórios" },
-  { id: "health", name: "Saúde" },
-];
 
 export default function ProductsSection() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [addedToCart, setAddedToCart] = useState<number[]>([]);
   const { toast } = useToast();
 
-  const { data: products, isLoading } = useQuery<Product[]>({
-    queryKey: ['/api/products'],
-  });
+  const products = staticProducts;
+  const isLoading = false;
 
-  const filteredProducts = products?.filter(product => 
+  const filteredProducts = products.filter(product => 
     selectedCategory === "all" || product.category === selectedCategory
-  ) || [];
+  );
 
   const addToCart = (productId: number, productName: string) => {
     setAddedToCart(prev => [...prev, productId]);
@@ -62,23 +52,7 @@ export default function ProductsSection() {
     }
   };
 
-  if (isLoading) {
-    return (
-      <section className="py-20 bg-gradient-to-br from-neutral to-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Skeleton className="h-12 w-96 mx-auto mb-4" />
-            <Skeleton className="h-6 w-[600px] mx-auto" />
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {[...Array(8)].map((_, i) => (
-              <Skeleton key={i} className="h-96 w-full" />
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
+
 
   return (
     <section id="products" className="py-20 bg-white">
@@ -105,18 +79,18 @@ export default function ProductsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {categories.map((category) => (
+          {productCategories.map((category) => (
             <Button
-              key={category.id}
-              onClick={() => setSelectedCategory(category.id)}
-              variant={selectedCategory === category.id ? "default" : "outline"}
+              key={category.value}
+              onClick={() => setSelectedCategory(category.value)}
+              variant={selectedCategory === category.value ? "default" : "outline"}
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                selectedCategory === category.id
+                selectedCategory === category.value
                   ? "bg-primary text-white hover:bg-primary/80"
                   : "bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white"
               }`}
             >
-              {category.name}
+              {category.label}
             </Button>
           ))}
         </motion.div>

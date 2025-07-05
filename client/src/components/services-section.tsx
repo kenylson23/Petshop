@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
 import { 
   Scissors, 
   Stethoscope, 
@@ -10,6 +8,7 @@ import {
   Heart, 
   Truck 
 } from "lucide-react";
+import { staticServices } from "@/data/static-data";
 import type { Service } from "@shared/schema";
 
 const iconMap = {
@@ -22,9 +21,8 @@ const iconMap = {
 };
 
 export default function ServicesSection() {
-  const { data: services, isLoading } = useQuery<Service[]>({
-    queryKey: ['/api/services'],
-  });
+  const services = staticServices;
+  const isLoading = false;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -47,23 +45,7 @@ export default function ServicesSection() {
     }
   };
 
-  if (isLoading) {
-    return (
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Skeleton className="h-12 w-96 mx-auto mb-4" />
-            <Skeleton className="h-6 w-[600px] mx-auto" />
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[...Array(6)].map((_, i) => (
-              <Skeleton key={i} className="h-80 w-full" />
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
+
 
   return (
     <section id="services" className="py-20 gradient-blue-light">
