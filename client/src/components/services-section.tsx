@@ -66,7 +66,7 @@ export default function ServicesSection() {
   }
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 gradient-blue-light">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16"
@@ -102,7 +102,7 @@ export default function ServicesSection() {
 
             return (
               <motion.div key={service.id} variants={itemVariants}>
-                <Card className="card-3d bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 h-full">
+                <Card className="card-3d glass-blue p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-blue-200/50 h-full hover:animate-float-blue">
                   <CardContent className="p-0">
                     <div className={`w-16 h-16 ${colorClass} rounded-full flex items-center justify-center mb-6 mx-auto`}>
                       <IconComponent size={24} />

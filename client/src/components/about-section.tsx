@@ -45,7 +45,7 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 gradient-blue-light">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div 

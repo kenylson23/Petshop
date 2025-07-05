@@ -116,7 +116,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-dark text-white">
+    <section id="contact" className="py-20 gradient-blue-dark text-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12">
           <motion.div
@@ -220,7 +220,7 @@ export default function ContactSection() {
                   <Button 
                     type="submit"
                     disabled={mutation.isPending}
-                    className="w-full bg-primary hover:bg-primary/80 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+                    className="w-full bg-white text-primary hover:bg-gray-100 py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
                   >
                     <Send className="mr-2" size={20} />
                     {mutation.isPending ? "Enviando..." : "Enviar Mensagem"}

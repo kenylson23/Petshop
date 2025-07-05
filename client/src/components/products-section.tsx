@@ -81,7 +81,7 @@ export default function ProductsSection() {
   }
 
   return (
-    <section id="products" className="py-20 bg-gradient-to-br from-neutral to-white">
+    <section id="products" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16"
@@ -157,7 +157,7 @@ export default function ProductsSection() {
                       </span>
                       <Button
                         onClick={() => addToCart(product.id, product.name)}
-                        className="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/80 transition-all duration-300 transform hover:scale-105"
+                        className="gradient-blue text-white px-4 py-2 rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105"
                         disabled={addedToCart.includes(product.id)}
                       >
                         {addedToCart.includes(product.id) ? (

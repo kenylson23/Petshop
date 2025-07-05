@@ -15,7 +15,7 @@ export default function HeroSection() {
   return (
     <section 
       id="home" 
-      className="hero-3d min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-secondary/20 to-accent/20"
+      className="hero-3d min-h-screen flex items-center justify-center relative overflow-hidden gradient-blue-light"
     >
       <ThreeDHero />
       <FloatingElements />
@@ -55,14 +55,14 @@ export default function HeroSection() {
             >
               <Button 
                 onClick={() => scrollToSection("services")}
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl border-2 border-transparent"
+                className="gradient-blue text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl border-2 border-transparent animate-pulse-blue"
               >
                 <Calendar className="mr-2" size={20} />
                 Agendar Serviço
               </Button>
               <Button 
                 onClick={() => scrollToSection("products")}
-                className="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="glass-blue border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <Store className="mr-2" size={20} />
                 Ver Produtos
