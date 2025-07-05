@@ -134,6 +134,12 @@ Changelog:
   * Updated all buttons, cards, and sections with blue theme
   * Added blue pulse animations and floating effects
   * Updated phone number to +244 949 639 932 throughout site
+- July 05, 2025. Converted to static site deployment:
+  * Removed API dependencies and server-side functionality
+  * Created static data files for products and services
+  * Configured Netlify for static site hosting
+  * Updated contact form to work without backend
+  * Optimized build process for static deployment
 ```
 
 ## User Preferences

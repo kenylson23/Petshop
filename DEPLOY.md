@@ -1,66 +1,82 @@
-# Deploy da Keny Pet no Netlify
+# Deploy da Keny Pet no Netlify (Site Estático)
 
-## Configuração Automática
+## Configuração para Site Estático
 
-O projeto está configurado para deploy automático no Netlify com as seguintes configurações:
+O projeto foi convertido para um site completamente estático, otimizado para deploy no Netlify sem necessidade de funções serverless.
 
 ### Arquivos de Configuração
 
-1. **netlify.toml** - Configuração principal do Netlify
-2. **netlify/functions/api.js** - Função serverless para API
-3. **client/public/_redirects** - Redirecionamentos para SPA
+1. **netlify.toml** - Configuração principal do Netlify para site estático
+2. **build-static.js** - Script de build otimizado para produção
+3. **client/src/data/static-data.ts** - Dados locais (produtos e serviços)
 
 ### Configurações de Build
 
-- **Build Command**: `npm run build`
-- **Publish Directory**: `dist/public`
+- **Build Command**: `node build-static.js`
+- **Publish Directory**: `dist`
 - **Node Version**: 20
-- **Functions Directory**: `netlify/functions`
+- **Tipo**: Site estático (JAMstack)
 
 ### Como Fazer Deploy
 
 1. **Via Git (Recomendado)**:
    - Conecte seu repositório GitHub ao Netlify
    - O deploy será automático em cada push
+   - Build configurado para `node build-static.js`
 
 2. **Via Drag & Drop**:
-   - Execute `npm run build` localmente
-   - Faça upload da pasta `dist/public` no Netlify
+   - Execute `node build-static.js` localmente
+   - Faça upload da pasta `dist` no Netlify
 
-### Funcionalidades Incluídas
+3. **Build Local**:
+   ```bash
+   # Build para produção
+   node build-static.js
+   
+   # Arquivos gerados em /dist
+   ```
 
-✅ **Frontend React** - SPA otimizado  
-✅ **API Serverless** - Functions do Netlify  
+### Funcionalidades do Site Estático
+
+✅ **Frontend React** - SPA completamente estático  
+✅ **Dados Locais** - Produtos e serviços incluídos no build  
 ✅ **Roteamento SPA** - Redirecionamentos configurados  
-✅ **CORS** - Configurado para produção  
-✅ **Dados Estáticos** - Produtos e serviços pré-carregados  
+✅ **Formulário Contato** - Simulação local (sem backend)  
+✅ **Performance** - Carregamento ultra-rápido  
+✅ **SEO** - Meta tags otimizadas  
 
-### Endpoints da API
+### Dados Incluídos
 
-- `GET /api/services` - Lista de serviços
-- `GET /api/products` - Lista de produtos (com filtro por categoria)
-- `POST /api/contacts` - Envio de formulário de contato
-- `GET /api/health` - Health check
+- **4 Serviços**: Banho & Tosa, Veterinária, Hospedagem, Adestramento
+- **6 Produtos**: Ração, Brinquedos, Camas, Acessórios, Higiene
+- **Preços em AOA**: Formatação para mercado angolano
+- **Contato**: +244 949 639 932, Luanda, Angola
 
-### Variáveis de Ambiente
+### Vantagens do Site Estático
 
-Nenhuma variável de ambiente é necessária para o funcionamento básico.
+- **Velocidade**: Carregamento instantâneo
+- **Custo**: Hospedagem gratuita no Netlify
+- **Segurança**: Sem vulnerabilidades de backend
+- **Escalabilidade**: CDN global automático
+- **Manutenção**: Zero dependências de servidor
 
-### Troubleshooting
+### Limitações
 
-1. **Build falhando**: Verifique se todas as dependências estão instaladas
-2. **API não funciona**: Verifique se os redirecionamentos estão configurados
-3. **SPA não funciona**: Verifique o arquivo `_redirects`
+- **Formulário**: Simulação local (não envia emails)
+- **CMS**: Dados devem ser editados no código
+- **Database**: Não há persistência de dados
 
-### Performance
+### Performance Otimizada
 
-- **Tamanho do Bundle**: Otimizado para produção
-- **Lazy Loading**: Imagens carregadas sob demanda
+- **Bundle Size**: Minimizado para produção
+- **Lazy Loading**: Componentes sob demanda
+- **Tree Shaking**: Remoção de código não utilizado
 - **Compressão**: Gzip automático pelo Netlify
-- **CDN**: Edge locations globais
+- **CDN**: 100+ edge locations globais
 
 ### Monitoramento
 
-- **Analytics**: Disponível no dashboard do Netlify
-- **Error Tracking**: Logs de função disponíveis
-- **Performance**: Core Web Vitals no Netlify Analytics
+- **Analytics**: Netlify Analytics integrado
+- **Performance**: Core Web Vitals automático
+- **Uptime**: 99.9% garantido pelo Netlify
+- **Deploy**: Logs detalhados de cada build
